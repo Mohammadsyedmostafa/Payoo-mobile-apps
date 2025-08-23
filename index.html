@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piyoo</title>
+    <!-- tailwind css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles/style.css">
-    
 </head>
-<body>
-    
+<body class="bg-[#f4f5f6] h-[100vh] flex justify-center items-center">
+    <main>
+        <div class="bg-no-repeat bg-[url(./images/bg.png)] h-[150px] w-[350px] flex justify-center items-center bg-cover">
+            <img src="./images/Group.png" alt="">
+        </div>
+         <form class=" bg-white p-7 rounded-2xl w-[350px]">
+            <div>
+                <label for="" class="font-bold">Mobile Number</label>
+                <br>
+                <input type="text" placeholder="Enter your number" class="input bg-[#f4f5f6] mt-3 rounded-2xl" id="mobile-number" />
+            </div>
+            <div class="mt-5">
+                <label for="" class="font-bold">4 Digit Pin</label>
+                <br>
+                <input type="text" placeholder="Enter 4 Digit Pin" class="input bg-[#f4f5f6] mt-3 rounded-2xl" id="pin-number"/>
+            </div>
+            <button class="btn btn-primary mt-5 w-full rounded-2xl" id="loginButton">Login</button>
+        </form>
+    </main>
+    <script src="./javascript/script.js"></script>
 </body>
 </html>
