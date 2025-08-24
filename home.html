@@ -29,36 +29,37 @@
             </div>
         </section>
         <section class="grid grid-cols-3 gap-4 mx-7 pb-8 items-center mt-7">
-            <div class="text-center py-5 border-1 border-stone-300 rounded-lg"> 
+            <div id="add-money-botton" class="text-center py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/wallet1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800"> Add Money</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]"> Add Money</h2>
             </div>
-            <div class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
+            <div id="cash-out-botton" class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/send1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800">Cashout</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]">Cashout</h2>
             </div>
             <div class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/money1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800">Transfer Money</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]">Transfer Money</h2>
             </div>
             <div class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/bonus1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800">Ge Bonus</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]">Ge Bonus</h2>
             </div>
             <div class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/wallet1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800">Pay Bill</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]">Pay Bill</h2>
             </div>
             <div class="text-center px-3 py-5 border-1 border-stone-300 rounded-lg"> 
                 <img src="./images/transaction1.png" class="mx-auto" alt="">
-                <h2 class="font-normal mt-3 text-slate-800">Transacition</h2>
+                <h2 class="font-normal mt-3 text-slate-800 text-[0.90rem]">Transacition</h2>
             </div>
         </section>
     </header>
     <main class="pb-20">
-        <section class="font-bold m-7">
-            <h1>Add Money</h1>
+        <!-- Add money Section -->
+        <section id="add-money" class="font-bold m-7">
             <div>
+                <h1>Add Money</h1>
                 <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
                     <div>
                         <label for="" class="font-semibold text-slate-700">Select A Bank</label>
@@ -88,6 +89,30 @@
                         <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="pin-number" />
                     </div>
                     <button class="btn btn-primary mt-5 w-full rounded-2xl" id="add-money-btn">Add Money</button>
+                </form>
+            </div>
+        </section>
+        <!-- Cash Out Section -->
+        <section id="cash-out" class="font-bold m-7">
+            <div>
+                <h1>Cash Out</h1>
+                <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
+                    <div class="">
+                        <label for="" class="font-semibold text-slate-700">Agent Number</label>
+                        <br>
+                        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="withdraw-account-number" />
+                    </div>
+                    <div class="mt-4">
+                        <label for="" class="font-semibold text-slate-700">Amount</label>
+                        <br>
+                        <input type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="withdraw-add-amount" />
+                    </div>
+                    <div class="mt-4">
+                        <label for="" class="font-semibold text-slate-700">Pin Number</label>
+                        <br>
+                        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="withdraw-pin-number" />
+                    </div>
+                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="withdraw-money-btn">Withdraw Money</button>
                 </form>
             </div>
         </section>

@@ -1,6 +1,6 @@
-document.getElementById("loginButton"),addEventListener('click', function(e){
+document.getElementById("loginButton").addEventListener('click', function(e){
     e.preventDefault();
-    const mobileNumber = 01641837393
+    const mobileNumber = 1641837393
     const pinNumber = 3264
 
     const mobileNumberValue = document.getElementById("mobile-number").value
