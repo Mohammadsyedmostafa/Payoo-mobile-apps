@@ -55,6 +55,7 @@ document.getElementById('add-money-btn').addEventListener('click', function(e){
     const pinNumber = getInputNumber('pin-number')
     if(addAmount<=0){
         alert("Invalit Ammount")
+        return;
     }
     console.log(bank,accountNumber,addAmount,pinNumber)
     const availableBalance = inputInnerText('availableBalance')
@@ -93,6 +94,7 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     const availableBalance = inputInnerText('availableBalance')
     if(withdrawAddAmount<=0 || withdrawAddAmount>availableBalance){
         alert("Invalit Ammount")
+        return;
     }
     console.log(availableBalance)
     
@@ -116,7 +118,40 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     console.log(transacitionData)
 })
 
+// Transfer Money Section
+document.getElementById('transfer-money-botton').addEventListener('click', function(e){
+    e.preventDefault()
+    const transferAccountNumber = getInputValue('transfer-account-number')
+    const transferAddAmount = getInputNumber('transfer-add-amount')
+    const transferPinNumber = getInputNumber('transfer-pin-number')
+    const availableBalance = inputInnerText('availableBalance')
+    if(transferAddAmount<=0 || transferAddAmount>availableBalance){
+        alert("Invalit Ammount")
+        return;
+    }
+    console.log(availableBalance)
+    
+    if(transferAccountNumber.length <11){
+        alert("Pleace Valit Account Number")
+        return;
+    }
+    if(transferPinNumber !== pin){
+        alert("Invalit Your Pin")
+        return;
+    }
 
+    const totalAvailableBalance = availableBalance - transferAddAmount
+    setInnerTaxt(totalAvailableBalance)
+
+    const data = {
+        name:"Transfer Out",
+        date: new Date().toLocaleTimeString()
+    }
+    transacitionData.push(data)
+    console.log(transacitionData)
+})
+
+// Transacition Section
 document.getElementById('transacition-botton').addEventListener('click', function(e){
     e.preventDefault()
     const transacitionMoney = document.getElementById('transacition-money')
