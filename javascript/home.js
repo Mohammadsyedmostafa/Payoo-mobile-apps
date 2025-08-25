@@ -1,4 +1,5 @@
 const pin = 1234
+const transacitionData = []
 
 // funtion for input value
 function getInputNumber(id){
@@ -52,6 +53,9 @@ document.getElementById('add-money-btn').addEventListener('click', function(e){
     const accountNumber = getInputValue('account-number')
     const addAmount = getInputNumber('add-amount')
     const pinNumber = getInputNumber('pin-number')
+    if(addAmount<=0){
+        alert("Invalit Ammount")
+    }
     console.log(bank,accountNumber,addAmount,pinNumber)
     const availableBalance = inputInnerText('availableBalance')
     console.log(availableBalance)
@@ -68,6 +72,13 @@ document.getElementById('add-money-btn').addEventListener('click', function(e){
 
     const totalAvailableBalance = addAmount + availableBalance
     setInnerTaxt(totalAvailableBalance)
+
+    const data = {
+        name:"Add Money",
+        date: new Date().toLocaleTimeString()
+    }
+    transacitionData.push(data)
+    console.log(transacitionData)
 })
 
 
@@ -80,6 +91,9 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
     const withdrawPinNumber = getInputNumber('withdraw-pin-number')
     console.log(withdrawAccountNumber,withdrawAddAmount,withdrawPinNumber)
     const availableBalance = inputInnerText('availableBalance')
+    if(withdrawAddAmount<=0 || withdrawAddAmount>availableBalance){
+        alert("Invalit Ammount")
+    }
     console.log(availableBalance)
     
     if(withdrawAccountNumber.length <11){
@@ -93,8 +107,42 @@ document.getElementById('withdraw-money-btn').addEventListener('click', function
 
     const totalAvailableBalance = availableBalance - withdrawAddAmount
     setInnerTaxt(totalAvailableBalance)
+
+    const data = {
+        name:"Cash Out",
+        date: new Date().toLocaleTimeString()
+    }
+    transacitionData.push(data)
+    console.log(transacitionData)
 })
 
+
+document.getElementById('transacition-botton').addEventListener('click', function(e){
+    e.preventDefault()
+    const transacitionMoney = document.getElementById('transacition-money')
+    transacitionMoney.innerText = ""
+    for(const data of transacitionData){
+        const div = document.createElement('div')
+        div.innerHTML = `
+        <div>
+            <div class="bg-white px-4 py-2 rounded-2xl mt-5 flex justify-between items-center">
+                <div class="flex items-center">
+                <div>
+                    <img src="./images/wallet1.png" class="rounded-full bg-[#f4f5f6] p-2" alt="">
+                    </div>
+                    <div div class="ml-3">
+                        <h1 class="font-medium text-sm">${data.name}</h1>
+                        <p class="font-normal text-sm">${data.date}</p>
+                    </div>
+                    </div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            </div>
+        `
+        transacitionMoney.appendChild(div)
+    }
+    
+})
 
 // toggoling
 

@@ -6,6 +6,7 @@
     <title>Piyoo</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="./images/Group.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="max-w-lg w-[90%] mx-auto bg-[#f4f5f6]">
@@ -57,7 +58,7 @@
     </header>
     <main class="pb-20">
         <!-- Add money Section -->
-        <section id="add-money" class="form font-bold m-7">
+        <section id="add-money" class="form font-bold m-7" style="display: none;">
             <div>
                 <h1>Add Money</h1>
                 <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
@@ -122,92 +123,80 @@
                 <h1>Transfer Money</h1>
                 <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
                     <div class="">
-                        <label for="" class="font-semibold text-slate-700">Agent Number</label>
+                        <label for="" class="font-semibold text-slate-700">User Account Number</label>
                         <br>
                         <input type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-account-number" />
                     </div>
                     <div class="mt-4">
                         <label for="" class="font-semibold text-slate-700">Amount</label>
                         <br>
-                        <input type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-add-amount" />
+                        <input type="text" placeholder="Enter amount to transfer" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-add-amount" />
                     </div>
                     <div class="mt-4">
                         <label for="" class="font-semibold text-slate-700">Pin Number</label>
                         <br>
                         <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-pin-number" />
                     </div>
-                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="transfer-money-botton">Withdraw Money</button>
+                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="transfer-money-botton">Send Now</button>
                 </form>
             </div>
         </section>
+        <!-- Bonus Section -->
         <section id="bonus-money" class="form font-bold m-7 " style="display: none;">
             <div>
                 <h1>Bonus Money</h1>
                 <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
                     <div class="">
-                        <label for="" class="font-semibold text-slate-700">Agent Number</label>
+                        <label for="" class="font-semibold text-slate-700">Enter Bonus Coupon</label>
                         <br>
-                        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-account-number" />
+                        <input type="text" placeholder="Enter Your Coupon" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="bonus-account-number" />
                     </div>
-                    <div class="mt-4">
-                        <label for="" class="font-semibold text-slate-700">Amount</label>
-                        <br>
-                        <input type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-add-amount" />
-                    </div>
-                    <div class="mt-4">
-                        <label for="" class="font-semibold text-slate-700">Pin Number</label>
-                        <br>
-                        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-pin-number" />
-                    </div>
-                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="transfer-money-botton">Withdraw Money</button>
+                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="bonus-botton">Get Bonus</button>
                 </form>
             </div>
         </section>
+        <!-- Pay Bill Section -->
         <section id="pay-bill" class="form font-bold m-7 " style="display: none;">
             <div>
                 <h1>Pay Bill</h1>
                 <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
-                    <div class="">
-                        <label for="" class="font-semibold text-slate-700">Agent Number</label>
+                    <div>
+                        <label for="" class="font-semibold text-slate-700">Select A Bank</label>
                         <br>
-                        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-account-number" />
+                        <select id="bank" class="select mt-2 rounded-3xl bg-[#f4f5f7] font-normal border-none w-full">
+                            <option>Select Bank</option>
+                            <option>Islami Bank</option>
+                            <option>One Bank</option>
+                            <option>AB Bank</option>
+                            <option>IFIC Bank</option>
+                            <option>Jumona Bank</option>
+                        </select>
                     </div>
                     <div class="mt-4">
-                        <label for="" class="font-semibold text-slate-700">Amount</label>
+                        <label for="" class="font-semibold text-slate-700">Biller Account Number</label>
                         <br>
-                        <input type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-add-amount" />
+                        <input type="text" placeholder="Enter account number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="pay-account-number" />
+                    </div>
+                    <div class="mt-4">
+                        <label for="" class="font-semibold text-slate-700">Amount to Pay</label>
+                        <br>
+                        <input type="text" placeholder="Add Amount to pay" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="pay-add-amount" />
                     </div>
                     <div class="mt-4">
                         <label for="" class="font-semibold text-slate-700">Pin Number</label>
                         <br>
-                        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-pin-number" />
+                        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="pay-pin-number" />
                     </div>
-                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="transfer-money-botton">Withdraw Money</button>
+                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="pay-botton">Pay Now</button>
                 </form>
             </div>
         </section>
-        <section id="transacition-money" class="form font-bold m-7 " style="display: none;">
-            <div>
-                <h1>Transacition Money</h1>
-                <form action="" class="mt-4 bg-white p-7 rounded-2xl w-[100%]">
-                    <div class="">
-                        <label for="" class="font-semibold text-slate-700">Agent Number</label>
-                        <br>
-                        <input type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-account-number" />
-                    </div>
-                    <div class="mt-4">
-                        <label for="" class="font-semibold text-slate-700">Amount</label>
-                        <br>
-                        <input type="text" placeholder="Enter amount to withdraw" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-add-amount" />
-                    </div>
-                    <div class="mt-4">
-                        <label for="" class="font-semibold text-slate-700">Pin Number</label>
-                        <br>
-                        <input type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f6] mt-2 rounded-2xl font-normal border-none w-full" id="transfer-pin-number" />
-                    </div>
-                    <button class="btn btn-primary mt-5 w-full rounded-2xl" id="transfer-money-botton">Withdraw Money</button>
-                </form>
-            </div>
+        <!-- Transacition Section -->
+        <section id="transacition-money" class="form font-bold m-7">
+                <div class="flex justify-between items-center">
+                    <h1>Transacition History</h1>
+                    <p class="font-normal text-slate-600">View All</p>
+                </div>
         </section>
     </main>
     <script src="./javascript/home.js"></script>
